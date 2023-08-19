@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Tip calculator app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h2>SPLI <br> TTER</h2>
+
+  <div class="container">
+
+    
+    <div class="inputs">
+      <p>Bill</p>
+      <div class="input-field-icon">
+        <img src="images/icon-dollar.svg" alt="dollar sign">
+        <input type="number" class="fields" id="bill" placeholder="0">
+      </div>
+      
+      <p>Select Tip %</p>
+
+      <div class="tip-container">
+        <button data-percentage="5" class="tip-buttons">5%</button>
+        <button data-percentage="10" class="tip-buttons">10%</button>
+        <button data-percentage="15" class="tip-buttons">15%</button>
+        <button data-percentage="25" class="tip-buttons">25%</button>
+        <button data-percentage="50" class="tip-buttons">50%</button>
+        <input type="number" placeholder="Custom" id="custom">
+      </div>
+
+      <div class="message">
+        <p id="people">Number of People</p>
+        <p id="error-zero">Can't be zero</p>
+      </div>
+
+      <div class="input-field-icon">
+        <img src="images/icon-person.svg" alt="person icon">
+        <input type="number" class="fields" id="numOfPeople" placeholder="0">
+      </div>
+
+    </div>
+    <div class="display">
+      <div>
+        <p>Tip Amount</p>
+      <div class="display-amount">
+        <p class="per-person">/ person</p>
+        <h1 class="amount" id="tip-amount">$0.00</h1>
+      </div>
+      <p>Total</p>
+      <div class="display-amount2">
+        <p class="per-person">/ person</p>
+        <h1 class="amount" id="totalAmount">$0.00</h1>
+      </div>
+      </div>
+
+      <div>
+        <button id="reset">RESET</button>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/KairuChris" target="_blank">Kyle Christopher Guiang</a>.
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
