@@ -8,7 +8,6 @@ let resetButton = document.getElementById("reset");
 let peopleNumberText = document.getElementById('people');
 let zeroErrorText = document.getElementById('error-zero');
 
-
 tipPercentage.forEach(button => {
     const buttonPercentage = parseFloat(button.getAttribute('data-percentage')) / 100;
     button.addEventListener('click', () => {
@@ -47,8 +46,7 @@ function calculateTips(buttonPercentage){
     }
 }
 
-
-resetButton.addEventListener("click", function(){
+resetButton.addEventListener("click", () => {
     bill.value = '';
     numOfPeople.value = '';
     tipCustomAmount.value = '';
@@ -58,16 +56,28 @@ resetButton.addEventListener("click", function(){
 
     numOfPeople.style.border = 'none';
     zeroErrorText.style.display = 'none';  
+    resetButton.style.opacity = '0.2';
+})
+
+bill.addEventListener('input', () => {
+    if(bill.value > '0'){
+        resetButton.style.opacity = '1';
+    }else{
+        resetButton.style.opacity = '0.2';
+    }
 })
 
 numOfPeople.addEventListener('input', () => {
     if(numOfPeople.value > '0'){
         numOfPeople.style.border = 'none';
-        zeroErrorText.style.display = 'none';    
+        zeroErrorText.style.display = 'none'; 
+        resetButton.style.opacity = '1';  
+
     }else{
         numOfPeople.style.border = '2px solid hsl(0, 73%, 67%)'
         zeroErrorText.style.display = 'block';
-    
+        resetButton.style.opacity = '0.2';
+
         tipAmountVal.innerText = '$0.00';
         totalAmount.innerText = '$0.00';
     }
